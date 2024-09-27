@@ -1,16 +1,78 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>jpaik03's CS 20 Collection</title>
-    <style type="text/css">
-      html,
+    <title>Justin's CS 20 Collection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
       body {
         font-size: 20px;
+        font-family: Helvetica, Arial, sans-serif;
+        margin: 0;
+      }
+      .flex-container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+      a {
+        text-decoration: none;
+        color: #8e25beb7;
+      }
+      a:hover {
+        color: #df1717;
+      }
+      .top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgb(244, 229, 250);
+        padding: 10px;
+      }
+      .big {
+        font-family: "Georgia", serif;
+        font-size: 60px;
+        color: #7b1ba8;
+        margin: 10px 0;
+      }
+      .main {
+        padding-top: 100px;
+        flex-grow: 1;
+      }
+      .main ul{
+        list-style-type: none;
+        padding: 10px;
+      }
+      .normal {
+        max-width: 60%;
+        margin: 10px;
+        line-height: 35px;
       }
     </style>
   </head>
   <body>
-    <a href="a1/assignment1.html">Assignment 1: Get on the Web</a><br/>
-    <a href="a2/assignment2_home.html">Assignment 2: Business Website</a>
+    <div class="flex-container">
+      <!-- Fixed Header -->
+      <div class="top">
+        <div class="big">
+          Justin's CS20 Page
+        </div>
+      </div>
+
+      <!-- Main Section -->
+      <div class="main">
+        <ul class="normal">
+          <li><a href="https://github.com/jpaik03/cs20">Repository</a></li>
+          <li>
+            <a href="a1/assignment1.html">Assignment 1: Get on the Web</a>
+          </li>
+          <li>
+            <a href="a2/assignment2_home.html"
+              >Assignment 2: Business Website</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
