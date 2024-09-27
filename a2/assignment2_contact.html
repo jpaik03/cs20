@@ -10,6 +10,13 @@
         font-family: Helvetica, Arial, sans-serif;
         background-image: url("a2tutor.jpg");
         background-size: cover;
+        background-position: top;
+        margin: 0px;
+      }
+      .flex-container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
       }
       a {
         text-decoration: none;
@@ -18,15 +25,16 @@
       a:hover {
         color: #a6a6a6;
       }
-      h1 {
+      .big {
         font-family: "Georgia", serif;
         font-size: 60px;
-        margin-left: 10px;
-        margin-top: 10px;
+        margin: 10px 0px;
       }
       ul#nav {
         list-style-type: none;
         font-size: 25px;
+        margin: 0px;
+        padding: 5px;
       }
       ul#nav li {
         display: inline;
@@ -37,12 +45,15 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 18vh;
+        height: auto;
         background-color: rgba(244, 229, 250, 1);
+        padding: 10px;
       }
       .main {
-        margin-top: 20vh;
+        top: 18%;
         background-color: rgba(255, 255, 255, 0.8);
+        padding-top: 150px;
+        flex-grow: 1;
       }
       .main img {
         float: right;
@@ -68,27 +79,45 @@
         display: inline-block;
         width: 100px;
       }
-      @media (max-width: 730px) {
-        h1 {
-          font-size: 30px;
+      .logo {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        max-width: 100px;
+        max-height: 100px;
+        object-fit: contain;
+      }
+      @media (max-width: 625px) {
+        .big {
+          font-size: 40px;
           text-align: center;
+          margin: 0px;
         }
         ul#nav {
           text-align: center;
+          padding: 5px;
         }
         ul#nav li {
-          font-size: 19px;
+          font-size: 15px;
         }
         .top {
           position: fixed;
           top: 0;
           left: 0;
           width: 100%;
-          height: 14vh;
+          height: auto;
           background-color: rgba(244, 229, 250, 1);
+          padding: 5px;
+        }
+        .logo {
+          position: fixed;
+          bottom: 10px;
+          right: 10px;
+          max-width: 50px;
+          object-fit: contain;
         }
         .main {
-          margin-top: 15vh;
+          padding-top: 100px;
           background-color: rgba(255, 255, 255, 0.8);
         }
         .main img {
@@ -101,93 +130,104 @@
     </style>
   </head>
   <body>
-    <!-- Top Section -->
-    <div class="top">
-      <h1>Bob's Tutoring Service</h1>
-      <ul id="nav">
-        <li><a href="assignment2_home.html">Home</a></li>
-        <li><a href="assignment2_about.html">About</a></li>
-        <li>
-          <a href="assignment2_contact.html"><strong>Contact Us</strong></a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Contact Us Section -->
-    <div class="main">
-      <img src="a2telephone.jpg" />
-      <p class="normal">
-        <strong>Contact Us:</strong><br />
-        We'd love to hear from you! Whether you have questions about our
-        tutoring services, want to schedule a session, or need more information,
-        feel free to reach out to us.
-      </p>
-
-      <ul class="normal">
-        <li><b>Email: </b>contact@bobstutoring.com</li>
-        <li><b>Phone: </b>(123) 456-7890</li>
-        <li>
-          <b>Hours: </b>
-          <ul>
-            <li>Monday to Friday: 09:00 - 17:00</li>
-            <li>Saturday: 09:00 - 13:00</li>
-            <li>Sunday: Closed</li>
-          </ul>
-        </li>
-      </ul>
-      <p class="normal"><strong>My Socials:</strong></p>
-      <ul class="normal">
-        <li><strong>Facebook: </strong>facebook.com/bobstutoring</li>
-        <li><strong>Twitter: </strong>twitter.com/bobstutoring</li>
-        <li><strong>Instagram: </strong>instagram.com/bobstutoring</li>
-      </ul>
-
-      <p class="normal">
-        You can also fill out the form below, and we'll get back to you as soon
-        as possible!
-      </p>
-
-      <form class="normal" action="#">
-        <div class="form-question">
-          <label>Name: </label>
-          <input type="text" />
+    <div class="flex-container">
+      <!-- Fixed Header -->
+      <div class="top">
+        <div class="big">
+          <a href="assignment2_home.html">Bob's Tutoring Service</a>
         </div>
-        <div class="form-question">
-          <label>Email: </label>
-          <input type="text" />
-        </div>
-        <div class="form-question">
-          <label>Phone: </label>
-          <input type="text" />
-        </div>
-        <input type="submit" value="Submit" />
-      </form>
+        <!-- Nav Menu -->
+        <ul id="nav">
+          <li><a href="assignment2_home.html">Home</a></li>
+          <li><a href="assignment2_about.html">About</a></li>
+          <li>
+            <a href="assignment2_contact.html"><strong>Contact Us</strong></a>
+          </li>
+        </ul>
+      </div>
 
-      <!-- Image Credits -->
-      <ul class="normal">
-        Image Credits
-        <li class="little">
-          <a
-            href="https://www.pexels.com/photo/magnifying-glass-on-textbook-4494641"
-            target="_blank"
-            >Background</a
-          >
-        </li>
-        <li class="little">
-          <a
-            href="https://www.pexels.com/photo/close-up-photo-of-puzzle-piece-on-white-surface-8385736/"
-            target="_blank"
-            >Icon</a
-          >
-        </li>
-        <li class="little">
-          <a
-            href="https://www.pexels.com/photo/selective-focus-photography-of-black-rotary-phone-163007/"
-            target="_blank"
-            >Telephone</a
-          >
-        </li>
-      </ul>
+      <!-- Contact Us Section -->
+      <div class="main">
+        <img src="a2telephone.jpg" />
+        <p class="normal">
+          <strong>Contact Us:</strong><br />
+          We'd love to hear from you! Whether you have questions about our
+          tutoring services, want to schedule a session, or need more
+          information, feel free to reach out to us.
+        </p>
+
+        <ul class="normal">
+          <li><b>Email: </b>contact@bobstutoring.com</li>
+          <li><b>Phone: </b>(123) 456-7890</li>
+          <li>
+            <b>Hours: </b>
+            <ul>
+              <li>Monday to Friday: 09:00 - 17:00</li>
+              <li>Saturday: 09:00 - 13:00</li>
+              <li>Sunday: Closed</li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Socials -->
+        <p class="normal"><strong>My Socials:</strong></p>
+        <ul class="normal">
+          <li><strong>Facebook: </strong>facebook.com/bobstutoring</li>
+          <li><strong>Twitter: </strong>twitter.com/bobstutoring</li>
+          <li><strong>Instagram: </strong>instagram.com/bobstutoring</li>
+        </ul>
+
+        <p class="normal">
+          You can also fill out the form below, and we'll get back to you as
+          soon as possible!
+        </p>
+
+        <!-- Form -->
+        <form class="normal" action="#">
+          <div class="form-question">
+            <label>Name: </label>
+            <input type="text" />
+          </div>
+          <div class="form-question">
+            <label>Email: </label>
+            <input type="text" />
+          </div>
+          <div class="form-question">
+            <label>Phone: </label>
+            <input type="text" />
+          </div>
+          <input type="submit" value="Submit" />
+        </form>
+
+        <!-- Image Credits -->
+        <ul class="normal">
+          Image Credits
+          <li class="little">
+            <a
+              href="https://www.pexels.com/photo/magnifying-glass-on-textbook-4494641"
+              target="_blank"
+              >Background</a
+            >
+          </li>
+          <li class="little">
+            <a
+              href="https://www.pexels.com/photo/close-up-photo-of-puzzle-piece-on-white-surface-8385736/"
+              target="_blank"
+              >Icon</a
+            >
+          </li>
+          <li class="little">
+            <a
+              href="https://www.pexels.com/photo/selective-focus-photography-of-black-rotary-phone-163007/"
+              target="_blank"
+              >Telephone</a
+            >
+          </li>
+        </ul>
+      </div>
+      <a href="assignment2_home.html"
+        ><img src="a2puzzle.png" class="logo"
+      /></a>
     </div>
   </body>
 </html>

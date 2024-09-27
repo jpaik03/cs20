@@ -10,6 +10,13 @@
         font-family: Helvetica, Arial, sans-serif;
         background-image: url("a2tutor.jpg");
         background-size: cover;
+        background-position: top;
+        margin: 0px;
+      }
+      .flex-container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
       }
       a {
         text-decoration: none;
@@ -18,15 +25,16 @@
       a:hover {
         color: #a6a6a6;
       }
-      h1 {
+      .big {
         font-family: "Georgia", serif;
         font-size: 60px;
-        margin-left: 10px;
-        margin-top: 10px;
+        margin: 10px 0px;
       }
       ul#nav {
         list-style-type: none;
         font-size: 25px;
+        margin: 0px;
+        padding: 5px;
       }
       ul#nav li {
         display: inline;
@@ -37,12 +45,15 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 18vh;
+        height: auto;
         background-color: rgba(244, 229, 250, 1);
+        padding: 10px;
       }
       .main {
-        margin-top: 20vh;
+        top: 18%;
         background-color: rgba(255, 255, 255, 0.8);
+        padding-top: 150px;
+        flex-grow: 1;
       }
       .main img {
         float: right;
@@ -64,27 +75,45 @@
         font-size: 10px;
         line-height: 15px;
       }
-      @media (max-width: 730px) {
-        h1 {
-          font-size: 30px;
+      .logo {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        max-width: 100px;
+        max-height: 100px;
+        object-fit: contain;
+      }
+      @media (max-width: 625px) {
+        .big {
+          font-size: 40px;
           text-align: center;
+          margin: 0px;
         }
         ul#nav {
           text-align: center;
+          padding: 5px;
         }
         ul#nav li {
-          font-size: 19px;
+          font-size: 15px;
         }
         .top {
           position: fixed;
           top: 0;
           left: 0;
           width: 100%;
-          height: 14vh;
+          height: auto;
           background-color: rgba(244, 229, 250, 1);
+          padding: 5px;
+        }
+        .logo {
+          position: fixed;
+          bottom: 10px;
+          right: 10px;
+          max-width: 50px;
+          object-fit: contain;
         }
         .main {
-          margin-top: 15vh;
+          padding-top: 100px;
           background-color: rgba(255, 255, 255, 0.8);
         }
         .main img {
@@ -97,84 +126,97 @@
     </style>
   </head>
   <body>
-    <!-- Top Section -->
-    <div class="top">
-      <h1>Bob's Tutoring Service</h1>
-      <ul id="nav">
-        <li><a href="assignment2_home.html">Home</a></li>
-        <li>
-          <a href="assignment2_about.html"><strong>About</strong></a>
-        </li>
-        <li><a href="assignment2_contact.html">Contact Us</a></li>
-      </ul>
-    </div>
+    <div class="flex-container">
+      <!-- Fixed Header -->
+      <div class="top">
+        <div class="big">
+          <a href="assignment2_home.html">Bob's Tutoring Service</a>
+        </div>
+        <!-- Nav Menu -->
+        <ul id="nav">
+          <li><a href="assignment2_home.html">Home</a></li>
+          <li>
+            <a href="assignment2_about.html"><strong>About</strong></a>
+          </li>
+          <li><a href="assignment2_contact.html">Contact Us</a></li>
+        </ul>
+      </div>
 
-    <!-- About Section -->
-    <div class="main">
-      <img src="a2students.jpg" />
-      <p class="normal">
-        <strong>Our Mission:</strong><br />
-        At Bob's Tutoring Service, our mission is to empower students to reach
-        their full academic potential through personalized, engaging, and
-        effective tutoring. We believe that every learner is unique, and we
-        tailor our teaching methods to fit individual needs, fostering
-        confidence and a love for learning. With a strong emphasis on academic
-        excellence and character development, we strive to create a supportive
-        environment where students can thrive, overcome challenges, and achieve
-        their educational goals. Together, we aim to make quality education
-        accessible to all, promoting lifelong learning and growth in our
-        community.
-      </p>
+      <!-- Main Section -->
+      <div class="main">
+        <img src="a2students.jpg" />
 
-      <p class="normal">
-        <strong>About Bob:</strong><br />
-        Bob has always had a passion for teaching and helping others succeed.
-        With a background in education and years of experience, he has developed
-        a unique approach to tutoring that emphasizes understanding and mastery
-        over rote memorization. Bob believes that education should be enjoyable,
-        and he works hard to make learning a positive experience for every
-        student.
-      </p>
-      <p class="normal">
-        In his free time, Bob enjoys reading, hiking, and exploring new
-        educational resources to bring to his sessions. He is committed to
-        continuous learning, both for himself and for his students. Bob also
-        values community involvement and often volunteers at local schools and
-        educational programs, helping to create opportunities for students from
-        all backgrounds.
-      </p>
-      <p class="normal">
-        Whether you're looking to boost your grades, prepare for a big test, or
-        simply gain more confidence in your abilities, Bob is here to support
-        you every step of the way. Together, you can unlock your full potential
-        and make learning a lifelong journey.
-      </p>
+        <!-- Mission -->
+        <p class="normal">
+          <strong>Our Mission:</strong><br />
+          At Bob's Tutoring Service, our mission is to empower students to reach
+          their full academic potential through personalized, engaging, and
+          effective tutoring. We believe that every learner is unique, and we
+          tailor our teaching methods to fit individual needs, fostering
+          confidence and a love for learning. With a strong emphasis on academic
+          excellence and character development, we strive to create a supportive
+          environment where students can thrive, overcome challenges, and
+          achieve their educational goals. Together, we aim to make quality
+          education accessible to all, promoting lifelong learning and growth in
+          our community.
+        </p>
 
-      <!-- Image Credits -->
-      <ul class="normal">
-        Image Credits
-        <li class="little">
-          <a
-            href="https://www.pexels.com/photo/magnifying-glass-on-textbook-4494641"
-            target="_blank"
-            >Background</a
-          >
-        </li>
-        <li class="little">
-          <a
-            href="https://www.pexels.com/photo/close-up-photo-of-puzzle-piece-on-white-surface-8385736/"
-            target="_blank"
-            >Icon</a
-          >
-        </li>
-        <li class="little">
-          <a
-            href="https://www.pexels.com/photo/girls-smiling-while-looking-at-camera-5212330/"
-            target="_blank"
-            >Students</a
-          >
-        </li>
-      </ul>
+        <!-- About Bob 1 -->
+        <p class="normal">
+          <strong>About Bob:</strong><br />
+          Bob has always had a passion for teaching and helping others succeed.
+          With a background in education and years of experience, he has
+          developed a unique approach to tutoring that emphasizes understanding
+          and mastery over rote memorization. Bob believes that education should
+          be enjoyable, and he works hard to make learning a positive experience
+          for every student.
+        </p>
+        <!-- About Bob 2 -->
+        <p class="normal">
+          In his free time, Bob enjoys reading, hiking, and exploring new
+          educational resources to bring to his sessions. He is committed to
+          continuous learning, both for himself and for his students. Bob also
+          values community involvement and often volunteers at local schools and
+          educational programs, helping to create opportunities for students
+          from all backgrounds.
+        </p>
+        <!-- About Bob 3 -->
+        <p class="normal">
+          Whether you're looking to boost your grades, prepare for a big test,
+          or simply gain more confidence in your abilities, Bob is here to
+          support you every step of the way. Together, you can unlock your full
+          potential and make learning a lifelong journey.
+        </p>
+
+        <!-- Image Credits -->
+        <ul class="normal">
+          Image Credits
+          <li class="little">
+            <a
+              href="https://www.pexels.com/photo/magnifying-glass-on-textbook-4494641"
+              target="_blank"
+              >Background</a
+            >
+          </li>
+          <li class="little">
+            <a
+              href="https://www.pexels.com/photo/close-up-photo-of-puzzle-piece-on-white-surface-8385736/"
+              target="_blank"
+              >Icon</a
+            >
+          </li>
+          <li class="little">
+            <a
+              href="https://www.pexels.com/photo/girls-smiling-while-looking-at-camera-5212330/"
+              target="_blank"
+              >Students</a
+            >
+          </li>
+        </ul>
+      </div>
+      <a href="assignment2_home.html"
+        ><img src="a2puzzle.png" class="logo"
+      /></a>
     </div>
   </body>
 </html>
