@@ -1,0 +1,131 @@
+body {
+  font-size: 20px;
+  font-family: Helvetica, Arial, sans-serif;
+  background-image: url("a2tutor.jpg");
+  background-size: cover;
+  background-position: top;
+  margin: 0px;
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+a {
+  text-decoration: none;
+  color: #2596be;
+}
+a:hover {
+  color: #a6a6a6;
+}
+.big {
+  font-family: "Georgia", serif;
+  font-size: 60px;
+  margin: 10px 0px;
+}
+ul#nav {
+  list-style-type: none;
+  font-size: 25px;
+  margin: 0px;
+  padding: 5px;
+}
+ul#nav li {
+  display: inline;
+  margin-right: 60px;
+}
+form.normal {
+  border: 1px solid #000000;
+  padding: 10px;
+}
+.top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-color: rgba(244, 229, 250, 1);
+  padding: 10px;
+}
+.main {
+  top: 18%;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding-top: 150px;
+  flex-grow: 1;
+}
+.main img {
+  float: right;
+  max-height: 100%;
+  width: auto;
+  max-width: 20%;
+  margin-top: 20px;
+  margin-right: 20px;
+  object-fit: contain;
+}
+.normal {
+  max-width: 60%;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 30px;
+  line-height: 35px;
+}
+.normal .little {
+  font-size: 10px;
+  line-height: 15px;
+}
+.checkbox {
+  margin-bottom: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+.form-question label {
+  display: inline-block;
+  width: 100px;
+}
+.logo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: contain;
+}
+@media (max-width: 625px) {
+  .big {
+    font-size: 40px;
+    text-align: center;
+    margin: 0px;
+  }
+  ul#nav {
+    text-align: center;
+    padding: 5px;
+  }
+  ul#nav li {
+    font-size: 15px;
+  }
+  .top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: rgba(244, 229, 250, 1);
+    padding: 5px;
+  }
+  .logo {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    max-width: 50px;
+    object-fit: contain;
+  }
+  .main {
+    padding-top: 100px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  .main img {
+    float: none;
+    max-width: 80%;
+    margin: 0 auto 20px;
+    display: block;
+  }
+}
