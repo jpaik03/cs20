@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Joe's Hotdogs</title>
+    <link rel="icon" type="image/x-icon" href="dancinghotdog.png" />
+    <style>
+      body {
+        font-size: 20px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        background-image: url("sausages.jpg");
+        background-size: cover;
+        background-position: top;
+        margin: 0px;
+      }
+      .flex-container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+      .top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background-color: rgb(204, 153, 33);
+        padding: 10px;
+      }
+      .big {
+        font-family: "Georgia", serif;
+        font-size: 80px;
+        margin: 10px;
+      }
+      .main {
+        top: 18%;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 125px 20px 0px;
+        flex-grow: 1;
+      }
+      .main img {
+        float: right;
+        max-height: 100%;
+        width: auto;
+        max-width: 30%;
+        margin-top: 20px;
+        object-fit: contain;
+      }
+      .main table {
+        margin-left: 20px;
+        border: 1px solid;
+      }
+      .main tr:nth-child(even) {
+        background-color: #bbbbbb;
+      }
+      .main tr:hover {
+        background-color: rgb(204, 153, 33);
+      }
+      .main td {
+        border: 0px;
+        vertical-align: middle;
+      }
+      .main ul {
+        margin-top: 50px;
+      }
+      .main .little {
+        background-color: transparent;
+        font-size: 10px;
+        line-height: 15px;
+      }
+    </style>
+    <script>
+      function showMoney(num) {
+        let num2 = (num * 100 + 0.5) - ((num * 100 + 0.5) % 1);
+        num2 /= 100;
+        let result = num2.toString();
+        if ((num2 * 100) % 100 == 0) {
+          return (result += ".00");
+        }
+        if ((num2 * 100) % 10 == 0) {
+          return (result += "0");
+        }
+        return result;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="flex-container">
+      <!-- Fixed Header -->
+      <div class="top">
+        <div class="big">Joe's Hotdogs</div>
+      </div>
+
+      <div class="main">
+        <img src="joe.jpg" />
+        <p style="font-size: 30px">Your Order<br /></p>
+        <script>
+          // set constants
+          const P_HOTDOG = 4.8;
+          const P_FRIES = 3.95;
+          const P_DRINK = 1.99;
+          var discount;
+          var tax;
+          var total;
+          // print statement
+          numDogs = prompt("How many hotdogs would you like?");
+          numFries = prompt("How many fries would you like?");
+          numSoda = prompt("How many sodas would you like?");
+          showMoney();
+          let hotdog_total = P_HOTDOG * numDogs;
+          let fries_total = P_FRIES * numFries;
+          let drink_total = P_DRINK * numSoda;
+          let subtotal = hotdog_total + fries_total + drink_total;
+        </script>
+
+        <!-- "Your Order" Table -->
+        <table border="1" cellpadding="5" cellspacing="0" width="50%">
+          <tr>
+            <td>Quantity of Hotdogs</td>
+            <td>
+              <script>
+                document.write(numDogs);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>Total Price of Hotdogs</td>
+            <td>
+              $<script>
+                document.write(showMoney(hotdog_total));
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>Quantity of Fries</td>
+            <td>
+              <script>
+                document.write(numFries);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>Total Price of Fries</td>
+            <td>
+              $<script>
+                document.write(showMoney(fries_total));
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>Quantity of Sodas</td>
+            <td>
+              <script>
+                document.write(numSoda);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>Total Price of Sodas</td>
+            <td>
+              $<script>
+                document.write(showMoney(drink_total));
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>Subtotal</td>
+            <td>
+              $<script>
+                document.write(showMoney(subtotal));
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>Discount</td>
+            <td>
+              $<script>
+                if (subtotal >= 25) {
+                  discount = subtotal * 0.1;
+                  document.write(showMoney(discount));
+                } else {
+                  document.write("0.00");
+                }
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>New Subtotal</td>
+            <td>
+              $<script>
+                if (subtotal >= 25) {
+                  subtotal -= discount;
+                }
+                document.write(showMoney(subtotal));
+              </script>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Tax</td>
+            <td>
+              $<script>
+                tax = subtotal * 0.0625;
+                document.write(showMoney(tax));
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>Grand Total</td>
+            <td>
+              $<script>
+                total = subtotal + tax;
+                document.write(showMoney(total));
+              </script>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Image Credits -->
+        <ul>
+          Image Credits
+          <li class="little">
+            <a
+              href="https://www.pexels.com/photo/sausages-on-barbecue-25388988/"
+              target="_blank"
+              >Background</a
+            >
+          </li>
+          <li class="little">
+            <a
+              href="https://www.pexels.com/photo/man-in-white-dress-shirt-wearing-eyeglasses-3814446/"
+              target="_blank"
+              >Joe</a
+            >
+          </li>
+          <li class="little">
+            <a
+              href="https://www.shutterstock.com/id/image-vector/hot-dog-dancing-vector-illustration-2451413961"
+              target="_blank"
+              >Icon</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
