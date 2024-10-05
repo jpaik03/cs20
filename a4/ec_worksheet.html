@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Extra Credit Worksheet</title>
+    <style></style>
+    <script>
+      function q1() {
+        document.write("Question 1<br/>");
+        for (let i = 40; i >= 10; i -= 2) {
+          document.write(i);
+          if (i > 10) {
+            document.write(", ");
+          }
+        }
+        document.write("<br/>");
+      }
+
+      function q2() {
+        document.write("<br/>Question 2<br/>");
+        var ask = 0;
+        let sum = 0;
+        while (sum <= 20) {
+          ask = parseFloat(prompt("What number would you like to add?"));
+          sum += ask;
+        }
+        document.write("Okay, the sum exceeds 20.<br/>");
+      }
+
+      function q3() {
+        document.write("<br/>Question 3<br/>");
+        let arr = [];
+        let sumArr = 0;
+        ask = 0;
+        while (sumArr <= 20) {
+          ask = parseFloat(prompt("What number would you like to add?"));
+          arr.push(ask);
+          sumArr += ask;
+        }
+        for (let i = 0; i < arr.length; i++) {
+          document.write(arr[i]);
+          if (i < arr.length - 1) {
+            document.write(", ");
+          }
+        }
+        document.write("<br/>");
+      }
+
+      function q4() {
+        document.write("<br/>Question 4<br/>");
+        songs = [];
+        songs["Rolling in the Deep"] = "Adele";
+        songs["Call Me Maybe"] = "Carly Rae Jepsen";
+        songs["Somebody That I Used to Know"] = "Gotye";
+        songs["Hey, Soul Sister"] = "Train";
+        songs["Chandelier"] = "Sia";
+        for (song in songs) {
+          document.write(song + " - " + songs[song] + "<br/>");
+        }
+      }
+
+      function q5() {
+        document.write("<br/>Question 5<br/>");
+        var band = prompt("Enter the artist.");
+        for (song in songs) {
+          if (songs[song].includes(band)) {
+            document.write(song + "<br/>");
+          }
+        }
+      }
+
+      function run() {
+        q1();
+        q2();
+        q3();
+        q4();
+        q5();
+      }
+    </script>
+  </head>
+  <body>
+    <script>
+      run();
+    </script>
+  </body>
+</html>
