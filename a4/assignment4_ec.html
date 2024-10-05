@@ -94,24 +94,27 @@
         <img src="joe.jpg" />
         <p style="font-size: 30px">Your Order<br /></p>
         <script>
-          // set constants
-          const P_HOTDOG = 4.8;
-          const P_FRIES = 3.95;
-          const P_DRINK = 1.99;
+          // set names and constants
+          names = ['hotdogs', 'fries', 'sodas'];
+          prices = [4.8, 3.95, 1.99];
+          
+          // ask user for quantities
+          var quantities = [];
+          for (let i = 0; i < names.length; i++){
+            quantities.push(parseFloat(prompt("How many " + names[i] + " would you like?")));
+          }
+
           var discount;
           var tax;
           var total;
 
-          // ask user for quantities
-          numDogs = prompt("How many hotdogs would you like?");
-          numFries = prompt("How many fries would you like?");
-          numSoda = prompt("How many sodas would you like?");
-          
           // calculate totals
-          let hotdog_total = P_HOTDOG * numDogs;
-          let fries_total = P_FRIES * numFries;
-          let drink_total = P_DRINK * numSoda;
-          let subtotal = hotdog_total + fries_total + drink_total;
+          var totals = [];
+          var subtotal = 0;
+          for (let i = 0; i < names.length; i++){
+            totals.push(prices[i] * quantities[i]);
+            subtotal += totals[i];
+          }
         </script>
 
         <!-- "Your Order" Table -->
@@ -120,7 +123,7 @@
             <td>Quantity of Hotdogs</td>
             <td>
               <script>
-                document.write(numDogs);
+                document.write(quantities[0]);
               </script>
             </td>
           </tr>
@@ -128,7 +131,7 @@
             <td>Total Price of Hotdogs</td>
             <td>
               $<script>
-                document.write(showMoney(hotdog_total));
+                document.write(showMoney(totals[0]));
               </script>
             </td>
           </tr>
@@ -136,7 +139,7 @@
             <td>Quantity of Fries</td>
             <td>
               <script>
-                document.write(numFries);
+                document.write(quantities[1]);
               </script>
             </td>
           </tr>
@@ -144,7 +147,7 @@
             <td>Total Price of Fries</td>
             <td>
               $<script>
-                document.write(showMoney(fries_total));
+                document.write(showMoney(totals[1]));
               </script>
             </td>
           </tr>
@@ -152,7 +155,7 @@
             <td>Quantity of Sodas</td>
             <td>
               <script>
-                document.write(numSoda);
+                document.write(quantities[2]);
               </script>
             </td>
           </tr>
@@ -160,7 +163,7 @@
             <td>Total Price of Sodas</td>
             <td>
               $<script>
-                document.write(showMoney(drink_total));
+                document.write(showMoney(totals[2]));
               </script>
             </td>
           </tr>
