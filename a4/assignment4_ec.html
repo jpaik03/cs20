@@ -70,7 +70,7 @@
     </style>
     <script>
       function showMoney(num) {
-        let num2 = (num * 100 + 0.5) - ((num * 100 + 0.5) % 1);
+        let num2 = num * 100 + 0.5 - ((num * 100 + 0.5) % 1);
         num2 /= 100;
         let result = num2.toString();
         if ((num2 * 100) % 100 == 0) {
@@ -95,25 +95,25 @@
         <p style="font-size: 30px">Your Order<br /></p>
         <script>
           // set names and constants
-          names = ['hotdogs', 'fries', 'sodas'];
-          prices = [4.8, 3.95, 1.99];
-          
+          var prices = [];
+          prices["hotdogs"] = 4.8;
+          prices["fries"] = 3.95;
+          prices["sodas"] = 1.99;
+
           // ask user for quantities
           var quantities = [];
-          for (let i = 0; i < names.length; i++){
-            quantities.push(parseFloat(prompt("How many " + names[i] + " would you like?")));
+          for (item in prices) {
+            quantities[item] = parseFloat(
+              prompt("How many " + item + " would you like?")
+            );
           }
-
-          var discount;
-          var tax;
-          var total;
 
           // calculate totals
           var totals = [];
           var subtotal = 0;
-          for (let i = 0; i < names.length; i++){
-            totals.push(prices[i] * quantities[i]);
-            subtotal += totals[i];
+          for (let item in prices) {
+            totals[item] = prices[item] * quantities[item];
+            subtotal += totals[item];
           }
         </script>
 
@@ -123,7 +123,7 @@
             <td>Quantity of Hotdogs</td>
             <td>
               <script>
-                document.write(quantities[0]);
+                document.write(quantities["hotdogs"]);
               </script>
             </td>
           </tr>
@@ -131,7 +131,7 @@
             <td>Total Price of Hotdogs</td>
             <td>
               $<script>
-                document.write(showMoney(totals[0]));
+                document.write(showMoney(totals["hotdogs"]));
               </script>
             </td>
           </tr>
@@ -139,7 +139,7 @@
             <td>Quantity of Fries</td>
             <td>
               <script>
-                document.write(quantities[1]);
+                document.write(quantities["fries"]);
               </script>
             </td>
           </tr>
@@ -147,7 +147,7 @@
             <td>Total Price of Fries</td>
             <td>
               $<script>
-                document.write(showMoney(totals[1]));
+                document.write(showMoney(totals["fries"]));
               </script>
             </td>
           </tr>
@@ -155,7 +155,7 @@
             <td>Quantity of Sodas</td>
             <td>
               <script>
-                document.write(quantities[2]);
+                document.write(quantities["sodas"]);
               </script>
             </td>
           </tr>
@@ -163,7 +163,7 @@
             <td>Total Price of Sodas</td>
             <td>
               $<script>
-                document.write(showMoney(totals[2]));
+                document.write(showMoney(totals["sodas"]));
               </script>
             </td>
           </tr>
@@ -179,6 +179,7 @@
             <td>Discount</td>
             <td>
               $<script>
+                let discount = 0;               
                 if (subtotal >= 25) {
                   discount = subtotal * 0.1;
                   document.write(showMoney(discount));
