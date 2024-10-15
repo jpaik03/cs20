@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TTT1</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .board {
+        display: flex;
+        flex-direction: column;
+      }
+      .row {
+        display: flex;
+      }
+      .cell {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #000000;
+        font-size: 96px;
+      }
+      .cell:hover {
+        background-color: #bebebe;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Create Board -->
+    <div class="board">
+      <!-- Row 1 -->
+      <div class="row">
+        <div class="cell">
+          <p>X</p>
+        </div>
+        <div class="cell"></div>
+        <div class="cell">
+          <p>O</p>
+        </div>
+      </div>
+      <!-- Row 2 -->
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell">
+          <p>X</p>
+        </div>
+        <div class="cell"></div>
+      </div>
+      <!-- Row 3 -->
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+    </div>
+  </body>
+</html>

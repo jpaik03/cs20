@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TTT4</title>
+    <link rel="icon" type="image/x-icon" href="tictactoeicon.png" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        flex-direction: column;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 {
+        font-size: 96px;
+        color: #ae2727;
+        vertical-align: middle;
+        margin: 20px;
+      }
+      .board {
+        display: flex;
+        flex-wrap: wrap;
+        width: 306px;
+        margin: 10px;
+      }
+      .square {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #000000;
+        font-size: 96px;
+      }
+      .square:hover {
+        background-color: #bebebe;
+      }
+      .turn {
+        border: 1px solid #000000;
+        font-size: 30px;
+        padding: 5px;
+        margin: 10px;
+      }
+      .reset {
+        border: 1px solid #000000;
+        background-color: #6ce753;
+        padding: 5px;
+        margin: 10px;
+      }
+      .win {
+        border: 1px solid #000000;
+        padding: 5px;
+        margin: 10px;
+      }
+    </style>
+    <script>
+      function reset() {
+        // Reset the content of each square and the moves array
+        moves.forEach(function (item, i) {
+          document.getElementById("sq" + i).innerHTML = "";
+          moves[i] = "-";
+        });
+
+        // Reset variables and indicators
+        active = true;
+        current = Math.random() < 0.5 ? "X" : "O";
+        turnIndicator = document.getElementById("turn");
+        turnIndicator.innerHTML = current + "'s Turn";
+        turnIndicator.style.color = current === "X" ? "#ff0000" : "#0000ff";
+        winIndicator = document.getElementById("win");
+        winIndicator.innerHTML = "No winner yet";
+        winIndicator.style.background = "#ffffff";
+      }
+
+      function checkWin() {
+        // Win Condition Array
+        let winConditions = [
+          // Horizontal Wins
+          moves[0] + moves[1] + moves[2],
+          moves[3] + moves[4] + moves[5],
+          moves[6] + moves[7] + moves[8],
+          // Vertical Wins
+          moves[0] + moves[3] + moves[6],
+          moves[1] + moves[4] + moves[7],
+          moves[2] + moves[5] + moves[8],
+          // Diagonal Wins
+          moves[0] + moves[4] + moves[8],
+          moves[2] + moves[4] + moves[6],
+        ];
+
+        let winner = "No winner yet";
+        let winColor = "#ffffff";
+        // Check for a winner
+        winConditions.forEach(function (item) {
+          if (item === "XXX") {
+            winner = "Winner: X";
+            winColor = "#ff7575";
+            active = false;
+          } else if (item === "OOO") {
+            winner = "Winner: O";
+            winColor = "#7575ff";
+            active = false;
+          }
+        });
+
+        // Check for stalemate
+        if (winner === "No winner yet") {
+          let stalemate = true;
+          moves.forEach(function (item) {
+            if (item === "-") {
+              stalemate = false;
+            }
+          });
+          if (stalemate) {
+            winner = "Stalemate";
+            winColor = "#999999";
+            active = false;
+          }
+        }
+        let won = document.getElementById("win");
+        won.innerHTML = winner;
+        won.style.background = winColor;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>TIC TAC TOE</h1>
+
+    <!-- Turn Indicator -->
+    <script>
+      // Randomly select the first player
+      let current = Math.random() < 0.5 ? "X" : "O";
+      // Draw the indicator
+      document.write(
+        "<div class='turn' id='turn' style='color: " +
+          (current === "X" ? "#ff0000" : "#0000ff") +
+          "'>" + current + "'s Turn</div>"
+      );
+    </script>
+
+    <!-- Create Board -->
+    <div class="board" id="board">
+      <script>
+        // Initialize variables and moves array
+        const NUM_SQUARES = 9;
+        let active = true;
+        let moves = new Array(NUM_SQUARES);
+
+        // Draw board
+        for (let i = 0; i < NUM_SQUARES; i++) {
+          id = "sq" + i;
+          document.write("<div class='square' id='" + id + "'></div>");
+          moves[i] = "-";
+        }
+      </script>
+    </div>
+
+    <!-- Square Selection Event Handler -->
+    <script>
+      let turnIndicator = document.getElementById("turn");
+      moves.forEach(function (item, i) {
+        let square = document.getElementById("sq" + i);
+        square.onclick = function () {
+          if (this.innerHTML === "" && active) {
+            this.innerHTML = "<p>" + current + "</p>";
+            moves[i] = current;
+            checkWin();
+            current = current === "X" ? "O" : "X";
+            this.style.color = current === "X" ? "#0000ff" : "#ff0000";
+            turnIndicator.style.color = current === "X" ? "#ff0000" : "#0000ff";
+            turnIndicator.innerHTML = current + "'s Turn";
+          }
+        };
+      });
+    </script>
+
+    <!-- Reset Game Button -->
+    <button class="reset" id="reset">New Game</button>
+    <script>
+      document.getElementById("reset").onclick = function () {
+        reset();
+      };
+    </script>
+
+    <!-- Winner Indicator -->
+    <div class="win" id="win">No winner yet</div>
+  </body>
+</html>
