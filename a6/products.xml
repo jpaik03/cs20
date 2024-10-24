@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="products.css"?>
+<products>
+    <!-- Product 1 -->
+    <product>
+        <name>Bananas</name>
+        <description>A bunch of organic bananas</description>
+        <price>4.00</price>
+        <categories>
+            <category>fruit</category>
+            <category>organic</category>
+        </categories>
+    </product>
+
+    <!-- Product 2 -->
+    <product>
+        <name>Apples</name>
+        <description>A bag of Honey Crisp apples</description>
+        <price>10.00</price>
+        <categories>
+            <category>fruit</category>
+        </categories>
+    </product>
+
+    <!-- Product 3 -->
+    <product>
+        <name>Chicken Breast</name>
+        <description>Fresh boneless skinless chicken breasts</description>
+        <price>6.99</price>
+        <categories>
+            <category>protein</category>
+        </categories>
+    </product>
+
+    <!-- Product 4 -->
+    <product>
+        <name>Whole Wheat Bread</name>
+        <description>Organic whole wheat bread loaf</description>
+        <price>3.50</price>
+        <categories>
+            <category>bakery</category>
+            <category>organic</category>
+        </categories>
+    </product>
+
+    <!-- Product 5 -->
+    <product>
+        <name>Soy Milk</name>
+        <description>1 liter of unsweetened soy milk</description>
+        <price>5.50</price>
+        <categories>
+            <category>dairy</category>
+        </categories>
+    </product>
+
+    <!-- Product 6 -->
+    <product>
+        <name>Yogurt</name>
+        <description>500g of plain yogurt</description>
+        <price>3.20</price>
+        <categories>
+            <category>dairy</category>
+        </categories>
+    </product>
+
+    <!-- Product 7 -->
+    <product>
+        <name>Eggs</name>
+        <description>A carton of a dozen free-range eggs</description>
+        <price>8.00</price>
+        <categories>
+            <category>protein</category>
+        </categories>
+    </product>
+
+    <!-- Product 8 -->
+    <product>
+        <name>Kiwis</name>
+        <description>A box of 6 organic kiwis</description>
+        <price>8.00</price>
+        <categories>
+            <category>fruit</category>
+            <category>organic</category>
+        </categories>
+    </product>
+
+</products>

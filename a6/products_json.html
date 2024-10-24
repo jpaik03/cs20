@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Products JSON</title>
+  </head>
+
+  <body>
+    <script language="javascript">
+      var products = [
+        {
+          "name": "Bananas",
+          "description": "A bunch of organic bananas",
+          "price": 4.0,
+          "categories": ["fruit", "organic"]
+        },
+        {
+          "name": "Apples",
+          "description": "A bag of Honey Crisp apples",
+          "price": 10.0,
+          "categories": ["fruit"]
+        },
+        {
+          "name": "Chicken Breast",
+          "description": "Fresh boneless skinless chicken breasts",
+          "price": 6.99,
+          "categories": ["protein"]
+        },
+        {
+          "name": "Whole Wheat Bread",
+          "description": "Organic whole wheat bread loaf",
+          "price": 3.5,
+          "categories": ["bakery", "organic"]
+        },
+        {
+          "name": "Soy Milk",
+          "description": "1 liter of unsweetened soy milk",
+          "price": 5.5,
+          "categories": ["dairy"]
+        },
+        {
+          "name": "Yogurt",
+          "description": "500g of plain yogurt",
+          "price": 3.2,
+          "categories": ["dairy"]
+        },
+        {
+          "name": "Eggs",
+          "description": "A carton of a dozen free-range eggs",
+          "price": 8.0,
+          "categories": ["protein"]
+        },
+        {
+          "name": "Kiwis",
+          "description": "A box of 6 organic kiwis",
+          "price": 8.0,
+          "categories": ["fruit", "organic"]
+        }
+      ];
+
+      // Display the JSON in string format
+      var productsStr = JSON.stringify(products);
+      document.write(productsStr);
+    </script>
+  </body>
+</html>

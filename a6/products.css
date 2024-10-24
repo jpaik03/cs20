@@ -1,0 +1,56 @@
+products {
+    width: 60%;
+    margin: 50px auto;
+    border: 1px solid;
+    padding: 20px;
+}
+
+product {
+    display: block;
+    margin: 0px 0px 15px 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #cccccc;
+    width: 95%;
+}
+
+product:last-child {
+    border-bottom: none;
+    margin-bottom: 0px;
+}
+
+product name {
+    display: inline-block;
+    font-size: 36px;
+    color: #40972f;
+    width: 350px;
+    margin-bottom: 10px;
+}
+
+product description {
+    display: inline-block;
+    font-size: 20px;
+    width: 400px;
+}
+
+product price {
+    font-size: 28px;
+    display: inline-block;
+    text-align: right;
+}
+
+product price:before {
+    content: "$";
+}
+
+product categories category {
+    list-style-type: disc;
+    list-style-position: inside;
+    display: list-item;
+    margin-left: 15px;
+}
+
+product categories:before {
+    content: "Categories: ";
+    font-size: 20px;
+    display: block;
+}
