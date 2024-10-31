@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Products 2 JSON</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+      #list {
+        max-width: 600px;
+        margin-top: 20px;
+      }
+      .product {
+        padding: 10px;
+        margin-bottom: 20px;
+        border-color: #000000;
+        border-style: solid;
+        border-width: 2px;
+        background-color: #dfdfdf;
+      }
+      .product h1 {
+        font-size: 24px;
+        padding-bottom: 10px;
+        color: #333;
+        margin: 0;
+      }
+      .product p {
+        margin: 0;
+        padding-bottom: 5px;
+      }
+      .product .price {
+        font-weight: bold;
+        color: #3aa343;
+      }
+      .product .categories {
+        color: #008cff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="list"></div>
+
+    <script>
+      $.get("products.json", function (data) {
+        let str = "";
+        data.forEach(function (product) {
+          str += "<div class='product'>";
+          str += "<h1>" + product.name + "</h1>";
+          str += "<p>" + product.description + "</p>";
+          str += "<p class='price'>Price: $" + product.price + "</p>";
+          str +=
+            "<p class='categories'>Categories: " + product.categories + "</p>";
+          str += "</div>";
+        });
+        document.getElementById("list").innerHTML = str;
+      });
+    </script>
+  </body>
+</html>
