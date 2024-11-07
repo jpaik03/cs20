@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Player Profile: Son Heung-Min</title>
+    <style>
+      #player-profile img {
+        width: 150px;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Player Profile</h1>
+    <div id="player-profile"></div>
+    <div id="api-info"></div>
+
+    <div id="api-info">
+      <h2>API Information</h2>
+      <p>
+        <strong>Description:</strong> This API includes statistics and profiles
+        of many soccer players around the world.
+      </p>
+      <p>
+        <strong>Website:</strong> The website I found it on is
+        <a href="https://www.api-football.com" target="_blank"
+          >https://www.api-football.com</a
+        >.
+      </p>
+      <p>
+        <strong>Parameters Used:</strong> I used the "player" parameter to find
+        the specific player in the API, which took the player's unique ID number
+        to index the profile.
+      </p>
+      <p>
+        <strong>Applications:</strong> This API might be useful for a sports
+        website like ESPN, or for a video game like FIFA to display statistics
+        about certain players.
+      </p>
+    </div>
+
+    <script>
+      fetch("https://v3.football.api-sports.io/players/profiles?player=186", {
+        headers: {
+          "x-apisports-key": "8a868c45cda99a2a9b4e1c55a31f224b",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => displayPlayerData(data));
+
+      // Function to display player data
+      function displayPlayerData(data) {
+        const player = data.response[0].player;
+        const profileContainer = document.getElementById("player-profile");
+
+        profileContainer.innerHTML = `
+          <img src="${player.photo}" alt="${player.name}">
+          <h2>${player.name} (#${player.number})</h2>
+          <p><strong>Position:</strong> ${player.position}</p>
+          <p><strong>Age:</strong> ${player.age}</p>
+          <p><strong>Birth Date:</strong> ${player.birth.date}</p>
+          <p><strong>Birth Place:</strong> ${player.birth.place}, ${player.birth.country}</p>
+          <p><strong>Nationality:</strong> ${player.nationality}</p>
+          <p><strong>Height:</strong> ${player.height}</p>
+          <p><strong>Weight:</strong> ${player.weight}</p>
+        `;
+      }
+    </script>
+  </body>
+</html>
